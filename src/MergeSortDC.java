@@ -11,7 +11,7 @@ public class MergeSortDC {
      * @param low 배열 시작 인덱스
      * @param high 배열 마지막 인덱스
      */
-    public void mergeSortDC(Integer[] list, int low, int high) {
+    public void mergeSortDC(int[] list, int low, int high) {
         int middle;
 
         if (low < high) {
@@ -22,9 +22,9 @@ public class MergeSortDC {
         }
     }
 
-    private void merge(Integer[] list, int low, int mid, int high) {
+    private void merge(int[] list, int low, int mid, int high) {
         int n1 = low, n2 = mid + 1, s = low, i;
-        Integer[] sorted = new Integer[MAX_SIZE]; // 배열의 길이로 설정.
+        Integer[] sorted = new Integer[MAX_SIZE]; // 배열의 길이 n으로 설정. MAX_SIZE는 객체화될 때 값을 가진다.
 
         while (n1 <= mid && n2 <= high) {
             if (list[n1] <= list[n2]) {

@@ -3,7 +3,7 @@ public class QuickSortDC {
     public QuickSortDC() {}
 
     /**
-     * 교재 내 알고리즘 3.10를 참고하여 구현한 퀵 정렬 메소드.
+     * 교재 내 알고리즘 3.10을 참고하여 구현한 퀵 정렬 메소드.
      * @param list 정렬할 배열
      * @param low 배열 시작 인덱스
      * @param high 배열 마지막 인덱스

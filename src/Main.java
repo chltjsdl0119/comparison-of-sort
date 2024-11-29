@@ -76,7 +76,7 @@ public class Main {
         // Threshold 테스트
 
         int n = 100000; // 데이터 크기 설정
-        int thresholdMax = 10000; // 임계값 최대 범위
+        int thresholdMax = 2000; // 임계값 최대 범위
         int testCount = 5; // 동일한 임계값에 대해 여러 번 실행하여 평균을 구함
 
         QuickSortDC_Threshold quickWithThreshold = new QuickSortDC_Threshold();
@@ -94,7 +94,7 @@ public class Main {
         System.out.println("웜업 완료.");
 
         // 임계값에 따른 성능 비교
-        for (int t = 0; t <= thresholdMax; t += 100) {
+        for (int t = 0; t <= thresholdMax; t += 25) {
             long totalTime = 0;
 
             for (int[] array : arrays3) {
@@ -106,7 +106,8 @@ public class Main {
             }
 
             double averageTimeSec = (double) totalTime / testCount / 1000;
-            System.out.println("임계값 " + t + "일 때 평균 실행 시간: " + averageTimeSec + " 초");
+//            System.out.println("임계값 " + t + "일 때 평균 실행 시간: " + averageTimeSec + " 초");
+            System.out.println(averageTimeSec);
         }
     }
 }

@@ -9,7 +9,7 @@ public class QuickSortDC_Threshold extends QuickSortDC{
      */
     void quickSortDC(int[] list, int low, int high, int threshold) {
         if (high - low + 1 <= threshold) {
-            insertionSort(list, low, high);  // 삽입 정렬 호출
+            insertionSort(list, high + 1);
         } else {
             if (low < high) {
                 int pivotPos = partition(list, low, high);
@@ -19,16 +19,20 @@ public class QuickSortDC_Threshold extends QuickSortDC{
         }
     }
 
-    // 삽입 정렬 메서드 추가
-    private void insertionSort(int[] list, int low, int high) {
-        for (int i = low + 1; i <= high; i++) {
-            int key = list[i];
-            int j = i - 1;
-            while (j >= low && list[j] > key) {
+    /**
+     * quickSortDC(int[] list, int low, int high, int threshold)에서 임계값 이하일 때, 실행할 삽입 정렬 메소드.
+     * 교재 내, 알고리즘 6.1을 참고하여 구현.
+     * @param list 정렬할 배열
+     * @param n 배열의 길이
+     */
+    private void insertionSort(int[] list, int n) {
+        int i, j, next;
+        for (i = 1; i < n; i++) {
+            next = list[i];
+            for (j = i - 1; j >= 0 && next < list[j]; j--) {
                 list[j + 1] = list[j];
-                j--;
             }
-            list[j + 1] = key;
+            list[j + 1] = next;
         }
     }
 }
